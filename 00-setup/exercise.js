@@ -1,24 +1,44 @@
-// 00-setup — your work goes in this file.
-//
-// Read 00-setup/README.md first, then run: node 00-setup/example.js
-// Check your work with: npm test 00
 
 /**
- * Returns who you are, so the rest of this repo knows whose work it is.
- *
- * @returns {{ name: string, studentId: string, githubUsername: string }}
+ * Says what type a value is.
  */
-export function getStudent() {
-  return {
-    // TODO: replace with your full name, as it appears on your student card.
-    name: "Ali Essam Ali",
+export function describeValue(value) {
+  return `${value} is a ${typeof value}`;
+}
 
-    // TODO: replace with your student ID. Keep the quotes — it stays a string.
-    studentId: "16008157",
+/**
+ * Builds a price label.
+ */
+export function priceLabel(product, amount) {
+  return `${product} costs ${amount} EGP`;
+}
 
-    // TODO: replace with your GitHub username. Not your email, not the repo
-    // name — the username that appears in your repo's URL:
-    // https://github.com/<username>/<repo>
-    githubUsername: "aliessam14",
-  };
+/**
+ * Is this price over 100 EGP?
+ */
+export function isExpensive(amount) {
+  return amount > 100;
+}
+
+/**
+ * What shipping costs on an order.
+ */
+export function shippingCost(orderTotal) {
+  if (orderTotal > 500) {
+    return 0;
+  }
+  return 50;
+}
+
+/**
+ * Describes how much of something is left.
+ */
+export function stockLabel(count) {
+  if (count === 0) {
+    return "Out of stock";
+  } else if (count < 10) {
+    return "Low stock";
+  } else {
+    return "In stock";
+  }
 }
